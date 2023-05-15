@@ -14,6 +14,7 @@
     <ProjectReference Include="..\..\shared\BackendSiteVendas.Exceptions\BackendSiteVendas.Exceptions.csproj" />
     <ProjectReference Include="..\..\shared\backend_site_venda.comunication\BackendSiteVendas.Comunication.csproj" />
     <ProjectReference Include="..\BackendSiteVendas.Application\BackendSiteVendas.Application.csproj" />
+    <ProjectReference Include="..\BackendSiteVendas.Infrastructure\BackendSiteVendas.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
