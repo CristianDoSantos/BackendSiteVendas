@@ -1,6 +1,10 @@
+using BackendSiteVendas.API.Filters;
+using BackendSiteVendas.Application;
+using BackendSiteVendas.Application.Services.AutoMapper;
 using BackendSiteVendas.Domain.Extension;
 using BackendSiteVendas.Infrastructure;
 using BackendSiteVendas.Infrastructure.Migrations;
+using BackendSiteVendas.Infrastructure.RepositoryAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +16,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddRepository(builder.Configuration);
+builder.Services.AddApplication();
+
+builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionsFilter)));
+
+builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(cfg => {
+    cfg.AddProfile(new AutoMapperConfiguration());
+}).CreateMapper());
+
+builder.Services.AddScoped<AuthenticatedUserAttribute>();
 
 var app = builder.Build();
 
@@ -34,9 +47,18 @@ app.Run();
 
 void RefreshDataBase()
 {
-    var connectionstring = builder.Configuration.GetConnection();
-    var databaseName = builder.Configuration.GetDatabaseName();
+    using var serviceScope = app.Services.GetRequiredService< IServiceScopeFactory>().CreateScope();
 
-    Database.CreateDatabase(connectionstring, databaseName);
-    app.MigrateDatabase();
+    using var context = serviceScope.ServiceProvider.GetService<BackendSiteVendasContext>();
+
+    bool? databaseInMemory = context?.Database?.ProviderName?.Equals("Microsoft.EntityFrameworkCore.InMemory");
+
+    if (!databaseInMemory.HasValue || !databaseInMemory.Value)
+    {
+        var connectionstring = builder.Configuration.GetConnection();
+        var databaseName = builder.Configuration.GetDatabaseName();
+
+        Database.CreateDatabase(connectionstring, databaseName);
+        app.MigrateDatabase();
+    }
 }
