@@ -61,11 +61,11 @@ namespace BackendSiteVendas.Exceptions {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The email address you entered is already registered in the database!.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s name is required..
         /// </summary>
-        public static string EMAIL_ALREADY_REGISTERED {
+        public static string BLANK_USER {
             get {
-                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
+                return ResourceManager.GetString("BLANK_USER", resourceCulture);
             }
         }
         
@@ -79,56 +79,11 @@ namespace BackendSiteVendas.Exceptions {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s emailis is invalid..
-        /// </summary>
-        public static string INVALID_USER_EMAIL {
-            get {
-                return ResourceManager.GetString("INVALID_USER_EMAIL", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown error..
-        /// </summary>
-        public static string UNKNOWN_ERROR {
-            get {
-                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The email and/or password are invalid..
-        /// </summary>
-        public static string INVALID_LOGIN {
-            get {
-                return ResourceManager.GetString("INVALID_LOGIN", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Current password invalid..
-        /// </summary>
-        public static string INVALID_CURRENT_PASSWORD {
-            get {
-                return ResourceManager.GetString("INVALID_CURRENT_PASSWORD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s password is required..
         /// </summary>
         public static string BLANK_USER_PASSWORD {
             get {
                 return ResourceManager.GetString("BLANK_USER_PASSWORD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s password mus have at least 6 characteres..
-        /// </summary>
-        public static string USER_PASSWORD_MIN_SIX_CHARACTERES {
-            get {
-                return ResourceManager.GetString("USER_PASSWORD_MIN_SIX_CHARACTERES", resourceCulture);
             }
         }
         
@@ -142,11 +97,11 @@ namespace BackendSiteVendas.Exceptions {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s phone numbers must be at the format XX X XXXX-XXXX.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email address you entered is already registered in the database!.
         /// </summary>
-        public static string INVALID_USER_PHONE {
+        public static string EMAIL_ALREADY_REGISTERED {
             get {
-                return ResourceManager.GetString("INVALID_USER_PHONE", resourceCulture);
+                return ResourceManager.GetString("EMAIL_ALREADY_REGISTERED", resourceCulture);
             }
         }
         
@@ -160,11 +115,20 @@ namespace BackendSiteVendas.Exceptions {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s name is required..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Current password invalid..
         /// </summary>
-        public static string BLANK_USER {
+        public static string INVALID_CURRENT_PASSWORD {
             get {
-                return ResourceManager.GetString("BLANK_USER", resourceCulture);
+                return ResourceManager.GetString("INVALID_CURRENT_PASSWORD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email and/or password are invalid..
+        /// </summary>
+        public static string INVALID_LOGIN {
+            get {
+                return ResourceManager.GetString("INVALID_LOGIN", resourceCulture);
             }
         }
         
@@ -174,6 +138,42 @@ namespace BackendSiteVendas.Exceptions {
         public static string INVALID_USER {
             get {
                 return ResourceManager.GetString("INVALID_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s emailis is invalid..
+        /// </summary>
+        public static string INVALID_USER_EMAIL {
+            get {
+                return ResourceManager.GetString("INVALID_USER_EMAIL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s phone numbers must be at the format XX X XXXX-XXXX.
+        /// </summary>
+        public static string INVALID_USER_PHONE {
+            get {
+                return ResourceManager.GetString("INVALID_USER_PHONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknown error..
+        /// </summary>
+        public static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s password mus have at least 6 characteres..
+        /// </summary>
+        public static string USER_PASSWORD_MIN_SIX_CHARACTERES {
+            get {
+                return ResourceManager.GetString("USER_PASSWORD_MIN_SIX_CHARACTERES", resourceCulture);
             }
         }
     }
