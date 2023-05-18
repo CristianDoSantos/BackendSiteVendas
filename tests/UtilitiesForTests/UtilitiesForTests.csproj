@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,10 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Bogus" Version="34.0.2" />
+    <PackageReference Include="Moq" Version="4.18.4" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\backend\BackendSiteVendas.Application\BackendSiteVendas.Application.csproj" />
+    <ProjectReference Include="..\..\src\backend\BackendSiteVendas.Domain\BackendSiteVendas.Domain.csproj" />
     <ProjectReference Include="..\..\src\shared\backend_site_venda.comunication\BackendSiteVendas.Comunication.csproj" />
   </ItemGroup>
 
