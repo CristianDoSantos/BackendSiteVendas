@@ -8,6 +8,6 @@ public static class VersionBase
     {
         return (ICreateTableWithColumnOrSchemaOrDescriptionSyntax)table
             .WithColumn("Id").AsInt64().PrimaryKey().Identity()
-            .WithColumn("DataCriacao").AsDateTime().NotNullable();
+            .WithColumn("CriationDate").AsDateTime().NotNullable();
     }
 }
