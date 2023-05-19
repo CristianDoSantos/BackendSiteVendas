@@ -53,9 +53,9 @@ void RefreshDataBase()
 
     using var context = serviceScope.ServiceProvider.GetService<BackendSiteVendasContext>();
 
-    bool? databaseInMemory = context?.Database?.ProviderName?.Equals("Microsoft.EntityFrameworkCore.InMemory");
+    bool? inMemoryDatabase = context?.Database?.ProviderName?.Equals("Microsoft.EntityFrameworkCore.InMemory");
 
-    if (!databaseInMemory.HasValue || !databaseInMemory.Value)
+    if (!inMemoryDatabase.HasValue || !inMemoryDatabase.Value)
     {
         var connectionstring = builder.Configuration.GetConnection();
         var databaseName = builder.Configuration.GetDatabaseName();
@@ -64,3 +64,5 @@ void RefreshDataBase()
         app.MigrateDatabase();
     }
 }
+
+public partial class Program { }

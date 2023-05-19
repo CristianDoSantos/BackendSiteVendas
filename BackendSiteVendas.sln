@@ -15,19 +15,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.Comunicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.Exceptions", "src\shared\BackendSiteVendas.Exceptions\BackendSiteVendas.Exceptions.csproj", "{54173F28-0371-42DD-AB13-790AA4BBA5D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendSiteVendas.Application", "src\backend\BackendSiteVendas.Application\BackendSiteVendas.Application.csproj", "{648A8548-2DAC-45FB-918B-AFF69CE9087B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.Application", "src\backend\BackendSiteVendas.Application\BackendSiteVendas.Application.csproj", "{648A8548-2DAC-45FB-918B-AFF69CE9087B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendSiteVendas.Domain", "src\backend\BackendSiteVendas.Domain\BackendSiteVendas.Domain.csproj", "{1B4F9977-FFA5-475D-BA81-4867B5A066CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.Domain", "src\backend\BackendSiteVendas.Domain\BackendSiteVendas.Domain.csproj", "{1B4F9977-FFA5-475D-BA81-4867B5A066CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendSiteVendas.Infrastructure", "src\backend\BackendSiteVendas.Infrastructure\BackendSiteVendas.Infrastructure.csproj", "{6A86F23E-1A06-46D1-9C7D-FACB22863C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.Infrastructure", "src\backend\BackendSiteVendas.Infrastructure\BackendSiteVendas.Infrastructure.csproj", "{6A86F23E-1A06-46D1-9C7D-FACB22863C8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackendSiteVendas.API", "src\backend\BackendSiteVendas.API\BackendSiteVendas.API.csproj", "{F5AFE2EC-CE3E-4A58-A328-EFA0138FFD3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackendSiteVendas.API", "src\backend\BackendSiteVendas.API\BackendSiteVendas.API.csproj", "{F5AFE2EC-CE3E-4A58-A328-EFA0138FFD3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{E07880F1-7685-4CDF-B4A4-DF6EAAD5DB4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Validators.Tests", "tests\Validators.Tests\Validators.Tests.csproj", "{E07880F1-7685-4CDF-B4A4-DF6EAAD5DB4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UseCases.Tests", "tests\UseCases.Tests\UseCases.Tests.csproj", "{D3CB8978-9F21-4A7A-943C-AAF8DF398BB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases.Tests", "tests\UseCases.Tests\UseCases.Tests.csproj", "{D3CB8978-9F21-4A7A-943C-AAF8DF398BB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Tests", "tests\WebApi.Tests\WebApi.Tests.csproj", "{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Tests", "tests\WebApi.Tests\WebApi.Tests.csproj", "{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesForTests", "tests\UtilitiesForTests\UtilitiesForTests.csproj", "{E933F5B5-8529-427F-8768-60A9F5060507}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E933F5B5-8529-427F-8768-60A9F5060507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E933F5B5-8529-427F-8768-60A9F5060507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E933F5B5-8529-427F-8768-60A9F5060507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E933F5B5-8529-427F-8768-60A9F5060507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +93,7 @@ Global
 		{E07880F1-7685-4CDF-B4A4-DF6EAAD5DB4C} = {EC0C5E1E-3B79-4A53-89FE-920ADA80D4EC}
 		{D3CB8978-9F21-4A7A-943C-AAF8DF398BB1} = {EC0C5E1E-3B79-4A53-89FE-920ADA80D4EC}
 		{B9D87DE1-5F6B-4540-8676-EDC8EF2E5C1A} = {EC0C5E1E-3B79-4A53-89FE-920ADA80D4EC}
+		{E933F5B5-8529-427F-8768-60A9F5060507} = {EC0C5E1E-3B79-4A53-89FE-920ADA80D4EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {15391972-4E40-4DFC-AB52-8CC61CA57038}

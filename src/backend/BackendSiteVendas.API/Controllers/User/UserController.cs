@@ -3,7 +3,7 @@ using BackendSiteVendas.Comunication.Requests;
 using BackendSiteVendas.Comunication.Responses;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BackendSiteVendas.API.Controllers
+namespace BackendSiteVendas.API.Controllers.User
 {
     public class UserController : BackendSiteVendasController
     {
