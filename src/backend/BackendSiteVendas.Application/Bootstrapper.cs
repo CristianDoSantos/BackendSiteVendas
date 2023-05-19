@@ -1,5 +1,6 @@
 ﻿using BackendSiteVendas.Application.Services.Cryptography;
 using BackendSiteVendas.Application.Services.Token;
+using BackendSiteVendas.Application.UseCases.Login.DoLogin;
 using BackendSiteVendas.Application.UseCases.User.Register;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,5 +34,7 @@ public static class Bootstrapper
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
+        services.AddScoped<ILoginUseCase, LoginUseCase>();
+
     }
 }
