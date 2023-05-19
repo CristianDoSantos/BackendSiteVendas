@@ -25,6 +25,9 @@ namespace BackendSiteVendas.API.Filters
             if (context.Exception is ValidationErrorException)
             {
                 TreatValidationErrorException(context);
+            } else if (context.Exception is InvalidLoginException)
+            {
+                TreatLoginException(context);
             }
         }
 
@@ -34,6 +37,13 @@ namespace BackendSiteVendas.API.Filters
 
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             context.Result = new ObjectResult(new ErrorResponseJson(validationErrorException.ErrorMessages));
+        }
+
+        private static void TreatLoginException(ExceptionContext context)
+        {
+            var loginError = context.Exception as InvalidLoginException;
+            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.Unauthorized;
+            context.Result = new ObjectResult(new ErrorResponseJson(loginError.Message));
         }
 
         private void ThrowUnknownError(ExceptionContext context)

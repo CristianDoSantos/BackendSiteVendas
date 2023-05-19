@@ -1,5 +1,8 @@
-﻿namespace BackendSiteVendas.Exceptions.ExceptionsBase;
+﻿using System.Runtime.Serialization;
 
+namespace BackendSiteVendas.Exceptions.ExceptionsBase;
+
+[Serializable]
 public class ValidationErrorException : BackendSiteVendasException
 {
     public List<string> ErrorMessages { get; set; }
@@ -8,4 +11,6 @@ public class ValidationErrorException : BackendSiteVendasException
     {
         ErrorMessages = errorMessages;
     }
+
+    protected ValidationErrorException(SerializationInfo info, StreamingContext context) : base(info, context) { }
 }
