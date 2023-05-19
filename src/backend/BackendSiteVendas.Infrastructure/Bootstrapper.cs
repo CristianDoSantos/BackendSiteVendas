@@ -15,7 +15,6 @@ public static class Bootstrapper
     public static void AddRepository(this IServiceCollection services, IConfiguration configurationManager)
     {
         AddFluentMigrator(services, configurationManager);
-
         AddContext(services, configurationManager);
         AddUnityOfWork(services);
         AddRepositories(services);
@@ -23,12 +22,17 @@ public static class Bootstrapper
 
     private static void AddContext(IServiceCollection services, IConfiguration configurationManager)
     {
-        var connectionString = configurationManager.GetCompleteConnection();
-
-        services.AddDbContext<BackendSiteVendasContext>(dbContextOptions => 
+        bool.TryParse(configurationManager.GetSection("Configurations:InMemoryDatabase").Value, out bool inMemoryDatabase);
+        
+        if (!inMemoryDatabase)
         {
-            dbContextOptions.UseSqlServer(connectionString);
-        });
+            var connectionString = configurationManager.GetCompleteConnection();
+
+            services.AddDbContext<BackendSiteVendasContext>(dbContextOptions => 
+            {
+                dbContextOptions.UseSqlServer(connectionString);
+            }); 
+        }
     }
 
     private static void AddUnityOfWork(IServiceCollection services)
@@ -44,7 +48,14 @@ public static class Bootstrapper
 
     private static void AddFluentMigrator(IServiceCollection services, IConfiguration configurationManager)
     {
-        services.AddFluentMigratorCore().ConfigureRunner(c => c.AddSqlServer()
-        .WithGlobalConnectionString(configurationManager.GetCompleteConnection()).ScanIn(Assembly.Load("BackendSiteVendas.Infrastructure")).For.All());
+        bool.TryParse(configurationManager.GetSection("Configurations:InMemoryDatabase").Value, out bool inMemoryDatabase);
+
+        if (!inMemoryDatabase)
+        {
+            services.AddFluentMigratorCore().ConfigureRunner(c => c.AddSqlServer()
+                .WithGlobalConnectionString(configurationManager.GetCompleteConnection()).ScanIn(Assembly.Load("BackendSiteVendas.Infrastructure")).For.All());
+        }
+
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿using BackendSiteVendas.Application.UseCases.User.Register;
 using BackendSiteVendas.Exceptions;
 using FluentAssertions;
-using UtilitiesForTests;
+using UtilitiesForTests.Requests;
 using Xunit;
 
 namespace Validators.Tests.User.Register;

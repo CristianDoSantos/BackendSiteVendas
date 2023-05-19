@@ -2,10 +2,10 @@
 using BackendSiteVendas.Exceptions;
 using BackendSiteVendas.Exceptions.ExceptionsBase;
 using FluentAssertions;
-using UtilitiesForTests;
 using UtilitiesForTests.Cryptography;
 using UtilitiesForTests.Mapper;
 using UtilitiesForTests.Repositories;
+using UtilitiesForTests.Requests;
 using UtilitiesForTests.Token;
 using Xunit;
 

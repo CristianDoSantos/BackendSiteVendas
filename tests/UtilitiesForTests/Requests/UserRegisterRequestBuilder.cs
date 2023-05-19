@@ -1,7 +1,7 @@
 ﻿using BackendSiteVendas.Comunication.Requests;
 using Bogus;
 
-namespace UtilitiesForTests;
+namespace UtilitiesForTests.Requests;
 
 public class UserRegisterRequestBuilder
 {
