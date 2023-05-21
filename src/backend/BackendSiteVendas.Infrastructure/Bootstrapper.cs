@@ -1,5 +1,6 @@
 ﻿using BackendSiteVendas.Domain.Extension;
 using BackendSiteVendas.Domain.Repositories;
+using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Infrastructure.RepositoryAccess;
 using BackendSiteVendas.Infrastructure.RepositoryAccess.Repository;
 using FluentMigrator.Runner;
@@ -43,7 +44,8 @@ public static class Bootstrapper
     private static void AddRepositories(IServiceCollection services)
     {
         services.AddScoped<IUserReadOnlyRepository, UserRepository>()
-            .AddScoped<IUserWriteOnlyRepository, UserRepository>();
+            .AddScoped<IUserWriteOnlyRepository, UserRepository>()
+            .AddScoped<IUserUpdateOnlyRepository, UserRepository>();
     }
 
     private static void AddFluentMigrator(IServiceCollection services, IConfiguration configurationManager)

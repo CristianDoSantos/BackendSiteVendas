@@ -1,4 +1,4 @@
-﻿namespace BackendSiteVendas.Domain.Repositories;
+﻿namespace BackendSiteVendas.Domain.Repositories.User;
 
 public interface IUserReadOnlyRepository
 {
