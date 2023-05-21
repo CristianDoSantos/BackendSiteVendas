@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Domain.Repositories;
+﻿using BackendSiteVendas.Domain.Repositories.User;
 using Moq;
 
 namespace UtilitiesForTests.Repositories;
