@@ -6,6 +6,6 @@ public class PasswordScramblerBuilder
 {
     public static PasswordScrambler Instance()
     {
-        return new PasswordScrambler("ABCD123");
+        return new PasswordScrambler("4sC@LQ8KMT9iAbc413O");
     }
 }
