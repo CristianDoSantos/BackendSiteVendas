@@ -1,6 +1,6 @@
 ﻿using BackendSiteVendas.Application.Services.Token;
 using BackendSiteVendas.Comunication.Responses;
-using BackendSiteVendas.Domain.Repositories;
+using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

@@ -1,10 +1,10 @@
 ﻿using BackendSiteVendas.Domain.Entities;
-using BackendSiteVendas.Domain.Repositories;
+using BackendSiteVendas.Domain.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace BackendSiteVendas.Infrastructure.RepositoryAccess.Repository;
 
-public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository
+public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository, IUserUpdateOnlyRepository
 {
     private readonly BackendSiteVendasContext _context;
     
@@ -26,6 +26,11 @@ public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository
     public async Task<User> RetrieveByEmailAndPassword(string email, string password)
     {
         return await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email.Equals(email) && u.Password.Equals(password));
+    }
+
+    public void Update(User user)
+    {
+        _context.Users.Update(user);
     }
 
     public async Task<bool> UserHasEmail(string email)
