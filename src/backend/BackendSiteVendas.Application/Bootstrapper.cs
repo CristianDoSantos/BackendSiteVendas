@@ -1,6 +1,8 @@
 ﻿using BackendSiteVendas.Application.Services.Cryptography;
+using BackendSiteVendas.Application.Services.LoggedUser;
 using BackendSiteVendas.Application.Services.Token;
 using BackendSiteVendas.Application.UseCases.Login.DoLogin;
+using BackendSiteVendas.Application.UseCases.User.ChangePassword;
 using BackendSiteVendas.Application.UseCases.User.Register;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,12 @@ public static class Bootstrapper
         AddPasswordAdditionalkey(services, configuration);
         AddTokenJWT(services, configuration);
         AddUseCases(services);
+        AddLoggedUser(services);
+    }
+
+    private static void AddLoggedUser(IServiceCollection services)
+    {
+        services.AddScoped<ILoggedUser, LoggedUser>();
     }
 
     private static void AddPasswordAdditionalkey(IServiceCollection services, IConfiguration configuration)
@@ -35,6 +43,7 @@ public static class Bootstrapper
     {
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<ILoginUseCase, LoginUseCase>();
+        services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
 
     }
 }
