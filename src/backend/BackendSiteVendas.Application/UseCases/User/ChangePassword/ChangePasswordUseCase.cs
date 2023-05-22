@@ -43,7 +43,7 @@ namespace BackendSiteVendas.Application.UseCases.User.ChangePassword
             var validator = new ChangePasswordValidator();
             var result = validator.Validate(request);
 
-            var encryptedCurrentPassword = _passwordScrambler.Encrypt(request.NewPassword);
+            var encryptedCurrentPassword = _passwordScrambler.Encrypt(request.CurrentPassword);
 
             if (!user.Password.Equals(encryptedCurrentPassword))
             {
