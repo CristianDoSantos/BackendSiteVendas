@@ -176,13 +176,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{URLBASE}}/user/alterar-senha",
+					"raw": "{{URLBASE}}/user/change-password",
 					"host": [
 						"{{URLBASE}}"
 					],
 					"path": [
 						"user",
-						"alterar-senha"
+						"change-password"
 					]
 				}
 			},
