@@ -22,7 +22,7 @@ namespace BackendSiteVendas.API.Controllers.User
         }
 
         [HttpPut]
-        [Route("alterar-senha")]
+        [Route("change-password")]
         [ServiceFilter(typeof(AuthenticatedUserAttribute))]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> ChangePassword(
