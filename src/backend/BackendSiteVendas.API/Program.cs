@@ -1,4 +1,5 @@
 using BackendSiteVendas.API.Filters;
+using BackendSiteVendas.API.Middleware;
 using BackendSiteVendas.Application;
 using BackendSiteVendas.Application.Services.AutoMapper;
 using BackendSiteVendas.Domain.Extension;
@@ -12,12 +13,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRouting(option => option.LowercaseUrls = true);
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddRepository(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication(builder.Configuration);
 
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionsFilter)));
@@ -44,6 +47,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 RefreshDataBase();
+
+app.UseMiddleware<CultureMiddleware>();
 
 app.Run();
 

@@ -20,7 +20,7 @@ namespace BackendSiteVendas.API.Filters
             }
         }
 
-        private void TreatBackendSiteVendasException(ExceptionContext context)
+        private static void TreatBackendSiteVendasException(ExceptionContext context)
         {
             if (context.Exception is ValidationErrorException)
             {
@@ -31,7 +31,7 @@ namespace BackendSiteVendas.API.Filters
             }
         }
 
-        private void TreatValidationErrorException(ExceptionContext context)
+        private static void TreatValidationErrorException(ExceptionContext context)
         {
             var validationErrorException = context.Exception as ValidationErrorException;
 
@@ -46,7 +46,7 @@ namespace BackendSiteVendas.API.Filters
             context.Result = new ObjectResult(new ErrorResponseJson(loginError.Message));
         }
 
-        private void ThrowUnknownError(ExceptionContext context)
+        private static void ThrowUnknownError(ExceptionContext context)
         {
             context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             context.Result = new ObjectResult(new ErrorResponseJson(ResourceCustomErrorMessages.UNKNOWN_ERROR));
