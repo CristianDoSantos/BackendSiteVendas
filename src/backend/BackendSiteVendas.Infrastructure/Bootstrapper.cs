@@ -13,7 +13,7 @@ namespace BackendSiteVendas.Infrastructure;
 
 public static class Bootstrapper
 {
-    public static void AddRepository(this IServiceCollection services, IConfiguration configurationManager)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configurationManager)
     {
         AddFluentMigrator(services, configurationManager);
         AddContext(services, configurationManager);

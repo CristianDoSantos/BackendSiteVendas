@@ -26,15 +26,15 @@ public static class Bootstrapper
 
     private static void AddPasswordAdditionalkey(IServiceCollection services, IConfiguration configuration)
     {
-        var section = configuration.GetRequiredSection("Configurations:PasswordAdditionalkey");
+        var section = configuration.GetRequiredSection("Configurations:Password:PasswordAdditionalkey");
 
         services.AddScoped(option => new PasswordScrambler(section.Value));
     }
 
     private static void AddTokenJWT(IServiceCollection services, IConfiguration configuration)
     {
-        var sectionTokenLifetime = configuration.GetRequiredSection("Configurations:TokenLifetime");
-        var sectionTokenKey = configuration.GetRequiredSection("Configurations:TokenKey");
+        var sectionTokenLifetime = configuration.GetRequiredSection("Configurations:Jwt:TokenLifetime");
+        var sectionTokenKey = configuration.GetRequiredSection("Configurations:Jwt:TokenKey");
 
         services.AddScoped(option => new TokenController(int.Parse(sectionTokenLifetime.Value), sectionTokenKey.Value));
     }
