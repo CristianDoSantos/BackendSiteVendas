@@ -1,4 +1,5 @@
 using BackendSiteVendas.API.Filters;
+using BackendSiteVendas.API.Middleware;
 using BackendSiteVendas.Application;
 using BackendSiteVendas.Application.Services.AutoMapper;
 using BackendSiteVendas.Domain.Extension;
@@ -19,7 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddRepository(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication(builder.Configuration);
 
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionsFilter)));
@@ -46,6 +47,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 RefreshDataBase();
+
+app.UseMiddleware<CultureMiddleware>();
 
 app.Run();
 
