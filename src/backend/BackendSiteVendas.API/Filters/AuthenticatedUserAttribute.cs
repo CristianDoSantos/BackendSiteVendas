@@ -2,6 +2,7 @@
 using BackendSiteVendas.Comunication.Responses;
 using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Exceptions;
+using BackendSiteVendas.Exceptions.ExceptionsBase;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -31,7 +32,7 @@ namespace BackendSiteVendas.API.Filters
 
                 if (user is null)
                 {
-                    throw new System.Exception();
+                    throw new BackendSiteVendasException(string.Empty);
                 }
             } 
             catch (SecurityTokenExpiredException)
@@ -44,24 +45,24 @@ namespace BackendSiteVendas.API.Filters
             }
         }
 
-        private string TokenInRequest(AuthorizationFilterContext context)
+        private static string TokenInRequest(AuthorizationFilterContext context)
         {
             var authorization = context.HttpContext.Request.Headers["Authorization"].ToString();
 
             if (string.IsNullOrEmpty(authorization))
             {
-                throw new System.Exception();
+                throw new BackendSiteVendasException(string.Empty);
             }
 
             return authorization["Bearer".Length..].Trim();
         }
 
-        private void ExpiredToken(AuthorizationFilterContext context)
+        private static void ExpiredToken(AuthorizationFilterContext context)
         {
             context.Result = new UnauthorizedObjectResult(new ErrorResponseJson(ResourceCustomErrorMessages.EXPIRED_TOKEN));
         }
 
-        private void UserNotAllowed(AuthorizationFilterContext context)
+        private static void UserNotAllowed(AuthorizationFilterContext context)
         {
             context.Result = new UnauthorizedObjectResult(new ErrorResponseJson(ResourceCustomErrorMessages.INVALID_USER));
         }
