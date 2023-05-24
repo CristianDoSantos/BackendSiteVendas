@@ -11,7 +11,7 @@ public class ChangePasswordTest : ControllerBase
 {
     private const string METHOD = "user/change-password";
 
-    private BackendSiteVendas.Domain.Entities.User _user;
+    private BackendSiteVendas.Domain.Entities.User.User _user;
     private string _password;
     public ChangePasswordTest(BackendSiteVendasWebApplicationFactory<Program> factory) : base(factory)
     {

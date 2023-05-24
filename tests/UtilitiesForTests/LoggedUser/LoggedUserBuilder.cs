@@ -1,4 +1,5 @@
 ﻿using BackendSiteVendas.Application.Services.LoggedUser;
+using BackendSiteVendas.Domain.Entities.User;
 using Moq;
 
 namespace UtilitiesForTests.LoggedUser;
@@ -22,7 +23,7 @@ public class LoggedUserBuilder
         return _instance;
     }
 
-    public LoggedUserBuilder RetrieveUser(BackendSiteVendas.Domain.Entities.User user)
+    public LoggedUserBuilder RetrieveUser(User user)
     {
         _repository.Setup(c => c.RetrieveUser()).ReturnsAsync(user);
 

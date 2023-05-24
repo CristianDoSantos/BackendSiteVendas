@@ -88,7 +88,7 @@ public class LoginUseCaseTest
             .Where(exception => exception.Message.Equals(ResourceCustomErrorMessages.INVALID_LOGIN));
     }
 
-    private static LoginUseCase CreateUseCase(BackendSiteVendas.Domain.Entities.User user)
+    private static LoginUseCase CreateUseCase(BackendSiteVendas.Domain.Entities.User.User user)
     {
         var crypter = PasswordScramblerBuilder.Instance();
         var token = TokenControllerBuilder.Instance();

@@ -1,4 +1,5 @@
-﻿using BackendSiteVendas.Domain.Repositories.User;
+﻿using BackendSiteVendas.Domain.Entities.User;
+using BackendSiteVendas.Domain.Repositories.User;
 using Moq;
 
 namespace UtilitiesForTests.Repositories;
@@ -22,7 +23,7 @@ public class UserUpdateOnlyRepositoryBuilder
         return _instance;
     }
 
-    public UserUpdateOnlyRepositoryBuilder RetrieveById(BackendSiteVendas.Domain.Entities.User user)
+    public UserUpdateOnlyRepositoryBuilder RetrieveById(User user)
     {
         _repository.Setup(c => c.RetrieveById(user.Id)).ReturnsAsync(user);
 

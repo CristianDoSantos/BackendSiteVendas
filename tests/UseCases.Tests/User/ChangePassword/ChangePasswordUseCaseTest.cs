@@ -91,7 +91,7 @@ public class ChangePasswordUseCaseTest
             .Where(ex => ex.ErrorMessages.Count == 1 && ex.ErrorMessages.Contains(ResourceCustomErrorMessages.USER_PASSWORD_MIN_SIX_CHARACTERES));
     }
 
-    private static ChangePasswordUseCase CreateUseCase(BackendSiteVendas.Domain.Entities.User user)
+    private static ChangePasswordUseCase CreateUseCase(BackendSiteVendas.Domain.Entities.User.User user)
     {
         var userUpdateOnlyRepository = UserUpdateOnlyRepositoryBuilder.Instance().RetrieveById(user).Build();
         var loggedUser = LoggedUserBuilder.Instance().RetrieveUser(user).Build();

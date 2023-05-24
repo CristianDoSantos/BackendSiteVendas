@@ -1,4 +1,5 @@
-﻿using BackendSiteVendas.Infrastructure.RepositoryAccess;
+﻿using BackendSiteVendas.Domain.Entities.User;
+using BackendSiteVendas.Infrastructure.RepositoryAccess;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,7 @@ namespace WebApi.Tests
 {
     public class BackendSiteVendasWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
-        private BackendSiteVendas.Domain.Entities.User _user;
+        private User _user;
         private string _password;
 
         protected override void ConfigureWebHost(IWebHostBuilder builder)
@@ -41,7 +42,7 @@ namespace WebApi.Tests
             });
         }
 
-        public BackendSiteVendas.Domain.Entities.User RetrieveUser()
+        public User RetrieveUser()
         {
             return _user;
         }

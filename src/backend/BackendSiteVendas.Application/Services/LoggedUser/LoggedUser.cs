@@ -1,5 +1,5 @@
 ﻿using BackendSiteVendas.Application.Services.Token;
-using BackendSiteVendas.Domain.Entities;
+using BackendSiteVendas.Domain.Entities.User;
 using BackendSiteVendas.Domain.Repositories.User;
 using Microsoft.AspNetCore.Http;
 

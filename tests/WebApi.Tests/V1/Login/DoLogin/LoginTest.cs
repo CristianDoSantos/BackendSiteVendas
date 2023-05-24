@@ -10,7 +10,7 @@ public class LoginTest : ControllerBase
 {
     private const string METHOD = "login";
 
-    private BackendSiteVendas.Domain.Entities.User _user;
+    private BackendSiteVendas.Domain.Entities.User.User _user;
     private string _password;
 
     public LoginTest(BackendSiteVendasWebApplicationFactory<Program> factory) : base(factory) 

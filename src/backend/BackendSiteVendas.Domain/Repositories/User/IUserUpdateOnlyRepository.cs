@@ -2,6 +2,6 @@
 
 public interface IUserUpdateOnlyRepository
 {
-    void Update(Entities.User user);
-    Task<Entities.User> RetrieveById(long id);
+    void Update(Entities.User.User user);
+    Task<Entities.User.User> RetrieveById(long id);
 }

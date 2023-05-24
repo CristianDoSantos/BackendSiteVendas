@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Domain.Entities;
+﻿using BackendSiteVendas.Domain.Entities.User;
 using BackendSiteVendas.Domain.Repositories.User;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +13,7 @@ public class UserRepository : IUserReadOnlyRepository, IUserWriteOnlyRepository,
         _context = context;
     }
 
-    public async Task Add(User user)
+    public async Task Register(User user)
     {
         await _context.Users.AddAsync(user);
     }
