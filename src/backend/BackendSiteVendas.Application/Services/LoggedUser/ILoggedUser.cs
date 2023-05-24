@@ -1,6 +1,8 @@
-﻿namespace BackendSiteVendas.Application.Services.LoggedUser;
+﻿using BackendSiteVendas.Domain.Entities.User;
+
+namespace BackendSiteVendas.Application.Services.LoggedUser;
 
 public interface ILoggedUser
 {
-    Task<Domain.Entities.User> RetrieveUser();
+    Task<User> RetrieveUser();
 }

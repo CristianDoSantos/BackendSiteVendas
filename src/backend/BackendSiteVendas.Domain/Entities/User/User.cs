@@ -1,4 +1,4 @@
-﻿namespace BackendSiteVendas.Domain.Entities;
+﻿namespace BackendSiteVendas.Domain.Entities.User;
 
 public class User : BaseEntity
 {

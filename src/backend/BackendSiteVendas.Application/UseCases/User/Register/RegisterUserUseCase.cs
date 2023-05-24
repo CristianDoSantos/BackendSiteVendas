@@ -33,10 +33,10 @@ public class RegisterUserUseCase : IRegisterUserUseCase
     {
         await Validate(request);
 
-        var entity = _mapper.Map<Domain.Entities.User>(request);
+        var entity = _mapper.Map<Domain.Entities.User.User>(request);
         entity.Password = _passwordScrambler.Encrypt(request.Password);
 
-        await _repository.Add(entity);
+        await _repository.Register(entity);
 
         await _unityOfWork.Commit();
 

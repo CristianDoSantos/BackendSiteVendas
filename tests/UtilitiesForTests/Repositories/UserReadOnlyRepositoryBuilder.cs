@@ -1,4 +1,5 @@
-﻿using BackendSiteVendas.Domain.Repositories.User;
+﻿using BackendSiteVendas.Domain.Entities.User;
+using BackendSiteVendas.Domain.Repositories.User;
 using Moq;
 
 namespace UtilitiesForTests.Repositories;
@@ -29,7 +30,7 @@ public class UserReadOnlyRepositoryBuilder
         return this;
     }
 
-    public UserReadOnlyRepositoryBuilder RetrieveByEmailAndPassword(BackendSiteVendas.Domain.Entities.User user)
+    public UserReadOnlyRepositoryBuilder RetrieveByEmailAndPassword(User user)
     {
         _repository.Setup(i => i.RetrieveByEmailAndPassword(user.Email, user.Password)).ReturnsAsync(user);
 

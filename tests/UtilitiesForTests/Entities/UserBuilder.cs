@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Domain.Entities;
+﻿using BackendSiteVendas.Domain.Entities.User;
 using Bogus;
 using UtilitiesForTests.Cryptography;
 

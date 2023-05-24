@@ -1,8 +1,6 @@
-﻿using BackendSiteVendas.Domain.Entities;
-
-namespace BackendSiteVendas.Domain.Repositories.User;
+﻿namespace BackendSiteVendas.Domain.Repositories.User;
 
 public interface IUserWriteOnlyRepository
 {
-    Task Add(Entities.User user);
+    Task Register(Entities.User.User user);
 }

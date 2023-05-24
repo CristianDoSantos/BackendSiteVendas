@@ -38,7 +38,7 @@ namespace BackendSiteVendas.Application.UseCases.User.ChangePassword
 
             await _unityOfWork.Commit();
         }
-        private void Validate(ChangePasswordRequestJson request, Domain.Entities.User user)
+        private void Validate(ChangePasswordRequestJson request, Domain.Entities.User.User user)
         {
             var validator = new ChangePasswordValidator();
             var result = validator.Validate(request);
