@@ -2,5 +2,6 @@
 
 public enum VersionsNumber
 {
-    CreateUserTable = 1
+    CreateUserTable = 1,
+    CreateRemainingTables = 2,
 }
