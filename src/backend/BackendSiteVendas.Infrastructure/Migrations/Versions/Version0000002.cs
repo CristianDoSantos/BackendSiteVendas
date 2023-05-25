@@ -18,6 +18,9 @@ public class Version0000002 : Migration
     {
         CreateCategoriesTable();
         CreateProductsTable();
+        CreateOrderStatusTable();
+        CreatePaymentTable();
+        CreateAddressTable();
         CreateOrdersTable();
         CreateOrderItemsTable();
         CreateShoppingCartItemsTable();
@@ -54,9 +57,12 @@ public class Version0000002 : Migration
           .WithColumn("UserId").AsInt64().NotNullable()
           .ForeignKey("FK_Orders_Users", "Users", "Id")
           .WithColumn("OrderDate").AsDateTime().NotNullable()
-          .WithColumn("Status").AsString(20).NotNullable()
-          .WithColumn("PaymentInfo").AsString(200).NotNullable()
-          .WithColumn("DeliveryAddress").AsString(500).NotNullable();
+          .WithColumn("StatusId").AsInt64().NotNullable()
+          .ForeignKey("FK_Orders_OrderStatus", "OrderStatus", "Id")
+          .WithColumn("PaymentId").AsInt64().NotNullable()
+          .ForeignKey("FK_Orders_Payment", "Payment", "Id")
+          .WithColumn("DeliveryAddressId").AsString(500).NotNullable()
+          .ForeignKey("FK_Orders_Address", "Address", "Id");
     }
 
     private void CreateOrderItemsTable()
@@ -104,5 +110,38 @@ public class Version0000002 : Migration
             .ForeignKey("FK_ProductReviews_Products", "Products", "Id")
             .WithColumn("Rating").AsInt32().NotNullable()
             .WithColumn("Comments").AsString(1000).NotNullable();
+    }
+
+    private void CreateOrderStatusTable()
+    {
+        var orderStatus = VersionBase.InsertDefaultColumns(Create.Table("OrderStatus"));
+
+        orderStatus
+            .WithColumn("Name").AsString(100).NotNullable()
+            .WithColumn("Description").AsString(500).Nullable();
+    }
+
+    private void CreatePaymentTable()
+    {
+        var payment = VersionBase.InsertDefaultColumns(Create.Table("Payment"));
+
+        payment
+            .WithColumn("Name").AsString(100).NotNullable()
+            .WithColumn("Description").AsString(500).Nullable();
+    }
+
+    private void CreateAddressTable()
+    {
+        var address = VersionBase.InsertDefaultColumns(Create.Table("Address"));
+
+        address
+            .WithColumn("UserId").AsInt64().NotNullable()
+            .ForeignKey("FK_Address_Users", "Users", "Id")
+            .WithColumn("Postal_Code").AsString(10).NotNullable()
+            .WithColumn("City").AsString(100).NotNullable()
+            .WithColumn("State").AsString(100).NotNullable()
+            .WithColumn("Street").AsString(100).NotNullable()
+            .WithColumn("Neighborhood").AsString(100).NotNullable()
+            .WithColumn("Address_Type").AsString(100).NotNullable();
     }
 }
