@@ -1,4 +1,4 @@
-﻿namespace BackendSiteVendas.Comunication.Requests;
+﻿namespace BackendSiteVendas.Comunication.Requests.User;
 
 public class ChangePasswordRequestJson
 {

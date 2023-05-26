@@ -6,6 +6,7 @@ using BackendSiteVendas.Domain.Extension;
 using BackendSiteVendas.Infrastructure;
 using BackendSiteVendas.Infrastructure.Migrations;
 using BackendSiteVendas.Infrastructure.RepositoryAccess;
+using HashidsNet;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +27,7 @@ builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddMvc(option => option.Filters.Add(typeof(ExceptionsFilter)));
 
 builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(cfg => {
-    cfg.AddProfile(new AutoMapperConfiguration());
+    cfg.AddProfile(new AutoMapperConfiguration(provider.GetService<IHashids>()));
 }).CreateMapper());
 
 builder.Services.AddScoped<AuthenticatedUserAttribute>();

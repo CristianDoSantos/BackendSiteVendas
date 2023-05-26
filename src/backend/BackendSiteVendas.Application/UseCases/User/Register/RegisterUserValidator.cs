@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Comunication.Requests;
+﻿using BackendSiteVendas.Comunication.Requests.User;
 using BackendSiteVendas.Exceptions;
 using FluentValidation;
 using System.Text.RegularExpressions;

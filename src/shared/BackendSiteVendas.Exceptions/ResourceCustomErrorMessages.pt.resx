@@ -139,7 +139,7 @@
     <value>Asenha do usuário deve ser informada.</value>
   </data>
   <data name="USER_PASSWORD_MIN_SIX_CHARACTERES" xml:space="preserve">
-    <value>A senha deve conter no minimo 6 caracteres.</value>
+    <value>A senha deve conter no mínimo 6 caracteres.</value>
   </data>
   <data name="BLANK_USER_PHONE" xml:space="preserve">
     <value>O telefone do usuário deve ser informado.</value>
@@ -155,5 +155,14 @@
   </data>
   <data name="INVALID_USER" xml:space="preserve">
     <value>Você não esta autorizado para acessar esta função.</value>
+  </data>
+  <data name="BLANK_CATEGORY_NAME" xml:space="preserve">
+    <value>O nome da categoria deve ser informado.</value>
+  </data>
+  <data name="SHORT_CATEGORY_DESCRIPTION" xml:space="preserve">
+    <value>O nome da categoria deve conter no mínimo 2 caracteres.</value>
+  </data>
+  <data name="BLANK_CATEGORY_DESCRIPTION" xml:space="preserve">
+    <value>A descrição da categoria deve ser informada.</value>
   </data>
 </root>

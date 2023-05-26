@@ -1,8 +1,8 @@
 ﻿using BackendSiteVendas.API.Filters;
 using BackendSiteVendas.Application.UseCases.User.ChangePassword;
 using BackendSiteVendas.Application.UseCases.User.Register;
-using BackendSiteVendas.Comunication.Requests;
-using BackendSiteVendas.Comunication.Responses;
+using BackendSiteVendas.Comunication.Requests.User;
+using BackendSiteVendas.Comunication.Responses.User;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendSiteVendas.API.Controllers.User
