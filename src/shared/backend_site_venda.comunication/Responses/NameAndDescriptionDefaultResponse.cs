@@ -1,7 +1,7 @@
 ﻿namespace BackendSiteVendas.Comunication.Responses;
 
-public class LoginResponseJson
+public class NameAndDescriptionDefaultResponse
 {
     public string Name { get; set; }
-    public string Token { get; set; }
+    public string? Description { get; set; }
 }

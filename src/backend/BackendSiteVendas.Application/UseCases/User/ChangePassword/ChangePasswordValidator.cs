@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Comunication.Requests;
+﻿using BackendSiteVendas.Comunication.Requests.User;
 using FluentValidation;
 
 namespace BackendSiteVendas.Application.UseCases.User.ChangePassword;

@@ -1,5 +1,5 @@
-﻿using BackendSiteVendas.Comunication.Requests;
-using BackendSiteVendas.Comunication.Responses;
+﻿using BackendSiteVendas.Comunication.Requests.Login.DoLogin;
+using BackendSiteVendas.Comunication.Responses.Login.DoLogin;
 
 namespace BackendSiteVendas.Application.UseCases.Login.DoLogin
 {

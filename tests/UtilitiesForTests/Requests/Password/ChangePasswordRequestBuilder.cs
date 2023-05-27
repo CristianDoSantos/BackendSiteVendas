@@ -1,7 +1,7 @@
-﻿using BackendSiteVendas.Comunication.Requests;
+﻿using BackendSiteVendas.Comunication.Requests.User;
 using Bogus;
 
-namespace UtilitiesForTests.Requests;
+namespace UtilitiesForTests.Requests.Password;
 
 public class ChangePasswordRequestBuilder
 {

@@ -2,7 +2,7 @@
 using FluentAssertions;
 using System.Net;
 using System.Text.Json;
-using UtilitiesForTests.Requests;
+using UtilitiesForTests.Requests.Password;
 using Xunit;
 
 namespace WebApi.Tests.V1.User.ChangePassword;

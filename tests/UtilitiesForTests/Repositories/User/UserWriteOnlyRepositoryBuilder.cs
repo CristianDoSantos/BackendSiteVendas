@@ -1,7 +1,7 @@
 ﻿using BackendSiteVendas.Domain.Repositories.User;
 using Moq;
 
-namespace UtilitiesForTests.Repositories;
+namespace UtilitiesForTests.Repositories.User;
 
 public class UserWriteOnlyRepositoryBuilder
 {
@@ -12,13 +12,13 @@ public class UserWriteOnlyRepositoryBuilder
     {
         if (_repository is null)
         {
-            _repository= new Mock<IUserWriteOnlyRepository>();
+            _repository = new Mock<IUserWriteOnlyRepository>();
         }
     }
 
     public static UserWriteOnlyRepositoryBuilder Instance()
     {
-        _instace= new UserWriteOnlyRepositoryBuilder();
+        _instace = new UserWriteOnlyRepositoryBuilder();
         return _instace;
     }
 

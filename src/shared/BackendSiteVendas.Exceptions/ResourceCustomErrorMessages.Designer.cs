@@ -61,6 +61,24 @@ namespace BackendSiteVendas.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The category description is required..
+        /// </summary>
+        public static string BLANK_CATEGORY_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("BLANK_CATEGORY_DESCRIPTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The category name is required..
+        /// </summary>
+        public static string BLANK_CATEGORY_NAME {
+            get {
+                return ResourceManager.GetString("BLANK_CATEGORY_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The user´s name is required..
         /// </summary>
         public static string BLANK_USER {
@@ -156,6 +174,15 @@ namespace BackendSiteVendas.Exceptions {
         public static string INVALID_USER_PHONE {
             get {
                 return ResourceManager.GetString("INVALID_USER_PHONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The category name must have at least 3 characteres..
+        /// </summary>
+        public static string SHORT_CATEGORY_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("SHORT_CATEGORY_DESCRIPTION", resourceCulture);
             }
         }
         

@@ -1,4 +1,4 @@
-﻿using BackendSiteVendas.Comunication.Requests;
+﻿using BackendSiteVendas.Comunication.Requests.User;
 
 namespace BackendSiteVendas.Application.UseCases.User.ChangePassword;
 

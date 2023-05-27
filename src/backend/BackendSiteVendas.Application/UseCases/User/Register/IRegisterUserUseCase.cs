@@ -1,5 +1,5 @@
-﻿using BackendSiteVendas.Comunication.Requests;
-using BackendSiteVendas.Comunication.Responses;
+﻿using BackendSiteVendas.Comunication.Requests.User;
+using BackendSiteVendas.Comunication.Responses.User;
 
 namespace BackendSiteVendas.Application.UseCases.User.Register;
 

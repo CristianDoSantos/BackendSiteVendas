@@ -5,7 +5,8 @@ using FluentAssertions;
 using UtilitiesForTests.Cryptography;
 using UtilitiesForTests.Mapper;
 using UtilitiesForTests.Repositories;
-using UtilitiesForTests.Requests;
+using UtilitiesForTests.Repositories.User;
+using UtilitiesForTests.Requests.User;
 using UtilitiesForTests.Token;
 using Xunit;
 

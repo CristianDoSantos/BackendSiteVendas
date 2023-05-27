@@ -1,4 +1,4 @@
-﻿namespace BackendSiteVendas.Comunication.Requests;
+﻿namespace BackendSiteVendas.Comunication.Requests.Login.DoLogin;
 
 public class LoginRequestJson
 {

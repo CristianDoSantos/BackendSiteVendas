@@ -1,4 +1,4 @@
-﻿    namespace BackendSiteVendas.Comunication.Responses;
+﻿namespace BackendSiteVendas.Comunication.Responses.User;
 
 public class RegisteredUserResponseJson
 {

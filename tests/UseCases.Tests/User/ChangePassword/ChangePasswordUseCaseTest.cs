@@ -1,5 +1,6 @@
 ﻿using BackendSiteVendas.Application.UseCases.User.ChangePassword;
 using BackendSiteVendas.Comunication.Requests;
+using BackendSiteVendas.Comunication.Requests.User;
 using BackendSiteVendas.Exceptions;
 using BackendSiteVendas.Exceptions.ExceptionsBase;
 using FluentAssertions;
@@ -7,7 +8,8 @@ using UtilitiesForTests.Cryptography;
 using UtilitiesForTests.Entities;
 using UtilitiesForTests.LoggedUser;
 using UtilitiesForTests.Repositories;
-using UtilitiesForTests.Requests;
+using UtilitiesForTests.Repositories.User;
+using UtilitiesForTests.Requests.Password;
 using Xunit;
 
 namespace UseCases.Tests.User.ChangePassword;

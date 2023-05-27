@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using BackendSiteVendas.Application.Services.Cryptography;
 using BackendSiteVendas.Application.Services.Token;
-using BackendSiteVendas.Comunication.Requests;
-using BackendSiteVendas.Comunication.Responses;
+using BackendSiteVendas.Comunication.Requests.User;
+using BackendSiteVendas.Comunication.Responses.User;
 using BackendSiteVendas.Domain.Repositories;
 using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Exceptions;

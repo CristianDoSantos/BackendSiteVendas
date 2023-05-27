@@ -2,6 +2,7 @@
 using BackendSiteVendas.Application.Services.LoggedUser;
 using BackendSiteVendas.Application.Services.Token;
 using BackendSiteVendas.Application.UseCases.Login.DoLogin;
+using BackendSiteVendas.Application.UseCases.Product.Register.Category;
 using BackendSiteVendas.Application.UseCases.User.ChangePassword;
 using BackendSiteVendas.Application.UseCases.User.Register;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,7 @@ public static class Bootstrapper
     {
         AddPasswordAdditionalkey(services, configuration);
         AddTokenJWT(services, configuration);
+        AddHashIds(services, configuration);
         AddUseCases(services);
         AddLoggedUser(services);
     }
@@ -39,11 +41,21 @@ public static class Bootstrapper
         services.AddScoped(option => new TokenController(int.Parse(sectionTokenLifetime.Value), sectionTokenKey.Value));
     }
 
+    private static void AddHashIds(IServiceCollection services, IConfiguration configuration)
+    {
+        var salt = configuration.GetRequiredSection("Configurations:HashIds:Salt");
+        services.AddHashids(setup => 
+        {
+            setup.Salt = salt.Value;
+            setup.MinHashLength = 3;
+        });
+    }
+
     private static void AddUseCases(IServiceCollection services)
     {
         services.AddScoped<IRegisterUserUseCase, RegisterUserUseCase>();
         services.AddScoped<ILoginUseCase, LoginUseCase>();
         services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
-
+        services.AddScoped<IRegisterCategoryUseCase, RegisterCategoryUseCase>();
     }
 }

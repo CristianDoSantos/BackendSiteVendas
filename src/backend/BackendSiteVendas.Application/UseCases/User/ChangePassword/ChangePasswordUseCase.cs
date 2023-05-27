@@ -1,6 +1,6 @@
 ﻿using BackendSiteVendas.Application.Services.Cryptography;
 using BackendSiteVendas.Application.Services.LoggedUser;
-using BackendSiteVendas.Comunication.Requests;
+using BackendSiteVendas.Comunication.Requests.User;
 using BackendSiteVendas.Domain.Repositories;
 using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Exceptions;

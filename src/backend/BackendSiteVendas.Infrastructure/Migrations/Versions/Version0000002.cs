@@ -61,7 +61,7 @@ public class Version0000002 : Migration
           .ForeignKey("FK_Orders_OrderStatus", "OrderStatus", "Id")
           .WithColumn("PaymentId").AsInt64().NotNullable()
           .ForeignKey("FK_Orders_Payment", "Payment", "Id")
-          .WithColumn("DeliveryAddressId").AsString(500).NotNullable()
+          .WithColumn("DeliveryAddressId").AsInt64().NotNullable()
           .ForeignKey("FK_Orders_Address", "Address", "Id");
     }
 

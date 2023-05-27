@@ -1,7 +1,7 @@
 ﻿using BackendSiteVendas.Application.Services.Cryptography;
 using BackendSiteVendas.Application.Services.Token;
-using BackendSiteVendas.Comunication.Requests;
-using BackendSiteVendas.Comunication.Responses;
+using BackendSiteVendas.Comunication.Requests.Login.DoLogin;
+using BackendSiteVendas.Comunication.Responses.Login.DoLogin;
 using BackendSiteVendas.Domain.Repositories.User;
 using BackendSiteVendas.Exceptions.ExceptionsBase;
 

@@ -156,4 +156,13 @@
   <data name="INVALID_USER" xml:space="preserve">
     <value>You are not allowed to access this feature.</value>
   </data>
+  <data name="BLANK_CATEGORY_NAME" xml:space="preserve">
+    <value>The category name is required.</value>
+  </data>
+  <data name="SHORT_CATEGORY_DESCRIPTION" xml:space="preserve">
+    <value>The category name must have at least 3 characteres.</value>
+  </data>
+  <data name="BLANK_CATEGORY_DESCRIPTION" xml:space="preserve">
+    <value>The category description is required.</value>
+  </data>
 </root>
