@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using System.Net;
-using UtilitiesForTests.Requests;
+using UtilitiesForTests.Requests.Password;
 using UtilitiesForTests.Token;
 using Xunit;
 

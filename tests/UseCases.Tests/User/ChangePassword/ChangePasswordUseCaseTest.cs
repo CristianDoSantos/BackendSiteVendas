@@ -7,7 +7,7 @@ using UtilitiesForTests.Cryptography;
 using UtilitiesForTests.Entities;
 using UtilitiesForTests.LoggedUser;
 using UtilitiesForTests.Repositories;
-using UtilitiesForTests.Requests;
+using UtilitiesForTests.Requests.Password;
 using Xunit;
 
 namespace UseCases.Tests.User.ChangePassword;

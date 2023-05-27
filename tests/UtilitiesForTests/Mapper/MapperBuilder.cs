@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BackendSiteVendas.Application.Services.AutoMapper;
+using UtilitiesForTests.Hashids;
 
 namespace UtilitiesForTests.Mapper;
 
@@ -7,10 +8,13 @@ public class MapperBuilder
 {
     public static IMapper Instance()
     {
-        var configuration = new MapperConfiguration(cfg => {
-            cfg.AddProfile<AutoMapperConfiguration>();
+        var hashids = HashidsBuilder.Instance().Build();
+
+        var mockMapper = new MapperConfiguration(cfg => 
+        {
+            cfg.AddProfile(new AutoMapperConfiguration(hashids));
         });
 
-        return configuration.CreateMapper();
+        return mockMapper.CreateMapper();
     }
 }
