@@ -4,7 +4,7 @@ using BackendSiteVendas.Exceptions.ExceptionsBase;
 using FluentAssertions;
 using UtilitiesForTests.Cryptography;
 using UtilitiesForTests.Entities;
-using UtilitiesForTests.Repositories;
+using UtilitiesForTests.Repositories.User;
 using UtilitiesForTests.Token;
 using Xunit;
 
@@ -19,7 +19,7 @@ public class LoginUseCaseTest
 
         var useCase = CreateUseCase(user);
 
-        var resposne = await useCase.Execute(new BackendSiteVendas.Comunication.Requests.LoginRequestJson
+        var resposne = await useCase.Execute(new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson
         {
             Email = user.Email,
             Password = password
@@ -39,7 +39,7 @@ public class LoginUseCaseTest
 
         Func<Task> action = async () => 
         {
-            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.LoginRequestJson
+            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson
             {
                 Email = user.Email,
                 Password = "InvalidPassword"
@@ -58,7 +58,7 @@ public class LoginUseCaseTest
         var useCase = CreateUseCase(user);
 
         Func<Task> action = async () => {
-            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.LoginRequestJson
+            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson
             {
                 Email = "InvalidEmail",
                 Password = password
@@ -77,7 +77,7 @@ public class LoginUseCaseTest
         var useCase = CreateUseCase(user);
 
         Func<Task> action = async () => {
-            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.LoginRequestJson
+            await useCase.Execute(new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson
             {
                 Email = "InvalidEmail",
                 Password = "InvalidPassword"

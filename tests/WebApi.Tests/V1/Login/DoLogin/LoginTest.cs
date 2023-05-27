@@ -22,7 +22,7 @@ public class LoginTest : ControllerBase
     [Fact]
     public async Task Validate_Success()
     {
-        var request = new BackendSiteVendas.Comunication.Requests.LoginRequestJson()
+        var request = new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson()
         {
             Email= _user.Email,
             Password = _password
@@ -42,7 +42,7 @@ public class LoginTest : ControllerBase
     [Fact]
     public async Task Validate_Invalid_Email_Error()
     {
-        var request = new BackendSiteVendas.Comunication.Requests.LoginRequestJson()
+        var request = new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson()
         {
             Email = "InvalidEmail",
             Password = _password
@@ -62,7 +62,7 @@ public class LoginTest : ControllerBase
     [Fact]
     public async Task Validate_Invalid_Password_Error()
     {
-        var request = new BackendSiteVendas.Comunication.Requests.LoginRequestJson()
+        var request = new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson()
         {
             Email = _user.Email,
             Password = "InvalidPassword"
@@ -82,7 +82,7 @@ public class LoginTest : ControllerBase
     [Fact]
     public async Task Validate_Invalid_Email_And_Password_Error()
     {
-        var request = new BackendSiteVendas.Comunication.Requests.LoginRequestJson()
+        var request = new BackendSiteVendas.Comunication.Requests.Login.DoLogin.LoginRequestJson()
         {
             Email = "InvalidEmail",
             Password = "InvalidPassword"

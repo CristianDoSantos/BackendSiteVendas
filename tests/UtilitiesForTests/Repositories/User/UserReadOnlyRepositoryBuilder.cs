@@ -2,7 +2,7 @@
 using BackendSiteVendas.Domain.Repositories.User;
 using Moq;
 
-namespace UtilitiesForTests.Repositories;
+namespace UtilitiesForTests.Repositories.User;
 
 public class UserReadOnlyRepositoryBuilder
 {
@@ -13,7 +13,7 @@ public class UserReadOnlyRepositoryBuilder
     {
         if (_repository is null)
         {
-            _repository= new Mock<IUserReadOnlyRepository>();
+            _repository = new Mock<IUserReadOnlyRepository>();
         }
     }
     public static UserReadOnlyRepositoryBuilder Instance()
@@ -30,7 +30,7 @@ public class UserReadOnlyRepositoryBuilder
         return this;
     }
 
-    public UserReadOnlyRepositoryBuilder RetrieveByEmailAndPassword(User user)
+    public UserReadOnlyRepositoryBuilder RetrieveByEmailAndPassword(BackendSiteVendas.Domain.Entities.User.User user)
     {
         _repository.Setup(i => i.RetrieveByEmailAndPassword(user.Email, user.Password)).ReturnsAsync(user);
 

@@ -45,8 +45,20 @@ public  class RegisterCategoryUseCaseValidatorTest
         var result = validator.Validate(request);
 
         result.IsValid.Should().BeFalse();
-        result.Errors.Should()
-            .Contain(err => err.ErrorMessage.Equals(ResourceCustomErrorMessages.BLANK_CATEGORY_DESCRIPTION))
-            .And.Contain(err => err.ErrorMessage.Equals(ResourceCustomErrorMessages.SHORT_CATEGORY_DESCRIPTION));
+        result.Errors.Should().ContainSingle().And.Contain(err => err.ErrorMessage.Equals(ResourceCustomErrorMessages.BLANK_CATEGORY_DESCRIPTION));
+    }
+
+    [Fact]
+    public void Validate_Minimum_Description_Characteres_Error()
+    {
+        var validator = new RegisterCategoryValidator();
+
+        var request = CategoryRegisterRequestBuilder.Build();
+        request.Description = "a";
+
+        var result = validator.Validate(request);
+
+        result.IsValid.Should().BeFalse();
+        result.Errors.Should().ContainSingle().And.Contain(err => err.ErrorMessage.Equals(ResourceCustomErrorMessages.SHORT_CATEGORY_DESCRIPTION));
     }
 }

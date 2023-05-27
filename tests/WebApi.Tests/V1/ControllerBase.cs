@@ -1,4 +1,5 @@
 ﻿using BackendSiteVendas.Comunication.Requests;
+using BackendSiteVendas.Comunication.Requests.Login.DoLogin;
 using BackendSiteVendas.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
