@@ -8,7 +8,7 @@ using UtilitiesForTests.Repositories.Product.Category;
 using UtilitiesForTests.Requests.Product.Category;
 using Xunit;
 
-namespace UseCases.Tests.Product.Category;
+namespace UseCases.Tests.Product.Category.Register;
 
 public class RegisterCategoryUseCaseTest
 {
